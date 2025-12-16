@@ -7,7 +7,7 @@ import { UserModule } from './user/user.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PostModule } from './post/post.module';
-import { SocketGateway } from './socket/socket.gateway';
+import { SocketModule } from './socket/socket.module';
 
 @Module({
   imports: [
@@ -31,8 +31,9 @@ import { SocketGateway } from './socket/socket.gateway';
     }),
     UserModule,
     PostModule,
+    SocketModule,
   ],
   controllers: [AppController],
-  providers: [AppService, SocketGateway],
+  providers: [AppService],
 })
 export class AppModule {}
